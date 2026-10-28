@@ -1,0 +1,22 @@
+services:
+  cobalt-api:
+    image: ghcr.io/imputnet/cobalt:latest
+    restart: unless-stopped
+    # No published ports: the bot reaches Cobalt over the internal compose network.
+    # Publishing 9000 on a VPS would expose the instance to the whole internet.
+    environment:
+      API_URL: "http://localhost:9000/"
+
+  telegram-bot:
+    build: .
+    container_name: fentloader_ultra
+    restart: unless-stopped
+    env_file:
+      - .env
+    depends_on:
+      - cobalt-api
+    environment:
+      - COBALT_URL=http://cobalt-api:9000/
+    volumes:
+      # SQLite DB lives on the host, survives rebuilds
+      - ./data:/app/data
