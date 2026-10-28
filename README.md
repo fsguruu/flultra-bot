@@ -1,4 +1,4 @@
-# flu-loader
+# flultra-bot
 
 A Telegram bot that downloads media from **Instagram**, **TikTok** and **YouTube Shorts**.
 Drop a link in a chat, and the bot replies with the video (or photo carousel) plus the audio track as a separate file with cover art.
