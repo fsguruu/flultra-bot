@@ -50,8 +50,8 @@ Any Instagram / TikTok / YouTube Shorts link in an activated chat is downloaded 
 Requirements: Docker with Docker Compose.
 
 ```bash
-git clone https://github.com/fsguruu/flu-loader.git
-cd flu-loader
+git clone https://github.com/fsguruu/flultra-bot.git
+cd flultra-bot
 cp .env.example .env   # fill in the values
 docker compose up -d --build
 ```
